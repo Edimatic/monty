@@ -1,42 +1,81 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "./monty.h"
+#define _POSIX_C_SOURCE 200809L
+
+#include "monty.h"
 
 /**
- * opcode - function in charge of running builtins
- * @stack: stack given by main
- * @str: string to compare
- * @line_cnt: amount of lines
- *
- * Return: nothing
+ * push - pushes an element to the stack
+ * @stack: double pointer to the head of the stack
+ * @line_number: current line number in the file
  */
-void opcode(stack_t **stack, char *str, unsigned int line_cnt)
+void push(stack_t **stack, unsigned int line_number)
 {
-	int i = 0;
+	char *arg;
+	int value;
+	stack_t *new_node;
 
-	instruction_t op[] = INSTRUCTIONS;
-
-	if (!strcmp(str, "stack"))
-	{
-		global.data_struct = 1;
-		return;
-	}
-	if (!strcmp(str, "queue"))
-	{
-		global.data_struct = 0;
-		return;
-	}
-
-	while (op[i].opcode)
-	{
-		if (strcmp(op[i].opcode, str) == 0)
-		{
-			op[i].f(stack, line_cnt);
-			return; /* if we found a match, run the function */
-		}
-		i++;
-	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_cnt, str);
+/* Check if there is an argument */
+	if (!stack || !line_number)
+{
+	fprintf(stderr, "L%u: usage: push integer\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+arg = strtok(NULL, " \t\n");
+
+/* Check if argument is provided */
+	if (!arg)
+	{
+	fprintf(stderr, "L%u: usage: push integer\n", line_number);
+	exit(EXIT_FAILURE);
+	}
+
+/* Convert argument to integer using atoi */
+	value = atoi(arg);
+
+	/* Create a new stack node */
+	new_node = malloc(sizeof(stack_t));
+	if (!new_node)
+	{
+	fprintf(stderr, "Error: malloc failed\n");
+	exit(EXIT_FAILURE);
+	}
+
+/* Initialize the new node */
+	new_node->n = value;
+	new_node->prev = NULL;
+
+/* Update links */
+	if (*stack)
+	{
+	new_node->next = *stack;
+	(*stack)->prev = new_node;
+	}
+	else
+	{
+	new_node->next = NULL;
+}
+
+/* Update the stack head */
+	*stack = new_node;
+}
+
+/**
+ * pall - prints all the values on the stack
+ * @stack: double pointer to the head of the stack
+ * @line_number: current line number in the file
+ */
+void pall(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current = *stack;
+
+/* Suppress unused parameter warning */
+	(void)line_number;
+
+/* Print all values on the stack */
+	while (current)
+	{
+	printf("%d\n", current->n);
+	current = current->next;
+	}
+}
+
