@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
 
 #define INSTRUCTIONS              \
 	{                           \
@@ -28,7 +32,6 @@
 			NULL, NULL      \
 		}                     \
 	}
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -73,11 +76,31 @@ typedef struct help
 } help;
 help global;
 
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct bus_s
+{
+        char *arg;
+        FILE *file;
+        char *content;
+        int lifi;
+}  bus_t;
+extern bus_t bus;
+
+
 /* stack utility functions available in linked_list.c */
 stack_t *add_node(stack_t **stack, const int n);
 stack_t *queue_node(stack_t **stack, const int n);
 void free_stack(stack_t *stack);
 size_t print_stack(const stack_t *stack);
+
+void f_pchar(stack_t **head, unsigned int counter);
 
 void push(stack_t **stack, unsigned int line_cnt);
 void pall(stack_t **stack, unsigned int line_cnt);
@@ -105,8 +128,23 @@ void f_pint(stack_t **stack, unsigned int line_cnt);
 void f_swap(stack_t **stack, unsigned int line_cnt);
 void f_pop(stack_t **stack, unsigned int line_cnt);
 void f_nop(stack_t **stack, unsigned int line_cnt);
+void f_div(stack_t **stack, unsigned int line_cnt);
+void f_add(stack_t **stack, unsigned int line_cnt);
+void f_sub(stack_t **stack, unsigned int line_cnt);
+void f_mul(stack_t **stack, unsigned int line_cnt);
+void f_mod(stack_t **stack, unsigned int line_cnt);
 
 
+void f_pchar(stack_t **stack, unsigned int line_cnt);
+void f_pstr(stack_t **stack, unsigned int line_cnt);
+void f_rotl(stack_t **stack, unsigned int line_count);
+void f_rotr(stack_t **stack, unsigned int line_count);
+
+void f_rotl(stack_t **stack, unsigned int line_count);
+void f_queue(stack_t **stack, unsigned int line_count);
+void f_stack(stack_t **stack, unsigned int line_count);
+
+int execute(char *content, stack_t **head, unsigned int counter, FILE *file); 
 
 int is_digit(char *string);
 int isnumber(char *str);

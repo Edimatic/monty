@@ -1,4 +1,7 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
+
 /**
 * execute - executes the opcode
 * @stack: head linked list - stack
