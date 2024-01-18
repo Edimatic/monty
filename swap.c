@@ -9,13 +9,13 @@
 */
 void m_swap_(stack_t **fore, unsigned int marker)
 {
-	stack_t *ed;
+	stack_t *edd;
 	int len = 0, aux;
 
-	ed = *fore;
-	while (ed)
+	edd = *fore;
+	while (edd)
 	{
-		ed = ed->next;
+		edd = edd->next;
 		len++;
 	}
 	if (len < 2)
@@ -26,9 +26,9 @@ void m_swap_(stack_t **fore, unsigned int marker)
 		free_stack(*fore);
 		exit(EXIT_FAILURE);
 	}
-	ed = *fore;
-	aux = ed->n;
-	ed->n = ed->next->n;
-	ed->next->n = aux;
+	edd = *fore;
+	aux = edd->n;
+	edd->n = edd->next->n;
+	edd->next->n = aux;
 }
 

@@ -12,20 +12,20 @@
 int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file)
 {
 	instruction_t opst[] = {
-				{"push", aka_push_}, {"pall", lp_pall_}, {"pint", aka_pint_},
-				{"pop", aka_pop_},
+				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
+				{"pop", f_pop},
 				{"swap", m_swap_},
 				{"add", f_add},
-				{"nop", kil_nop_},
+				{"nop", f_nop},
 				{"sub", s_sub_},
-				{"div", wit_div_},
-				{"mul", str_mul_},
-				{"mod", mk_mod_},
-				{"pchar", st_pchar_},
-				{"pstr", aka_pstr_},
+				{"div", f_div},
+				{"mul", f_mul},
+				{"mod", f_mod},
+				{"pchar", f_pchar},
+				{"pstr", f_pstr},
 				{"rotl", aka_rotl_},
 				{"rotr", ak_rotr_},
-				{"queue", aka_queue_},
+				{"queue", f_queue},
 				{"stack", st_stack_},
 				{NULL, NULL}
 				};

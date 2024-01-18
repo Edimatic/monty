@@ -59,30 +59,26 @@ typedef struct instruction_s
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void aka_push_(stack_t **fore, unsigned int marker);
-void lp_pall_(stack_t **fore, unsigned int marker);
-void aka_pint_(stack_t **fore, unsigned int marker);
+void f_push(stack_t **head, unsigned int number);
+void f_pall(stack_t **head, unsigned int number);
+void f_pint(stack_t **head, unsigned int number);
 int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file);
-
-void man_stack(stack_t *fore);
-void free_stack(stack_t *fore);
-
-void aka_pop_(stack_t **fore, unsigned int marker);
+void free_stack(stack_t *head);
+void f_pop(stack_t **head, unsigned int counter);
 void m_swap_(stack_t **fore, unsigned int marker);
 void f_add(stack_t **head, unsigned int counter);
-void kil_nop_(stack_t **fore, unsigned int marker);
+void f_nop(stack_t **head, unsigned int counter);
 void s_sub_(stack_t **fore, unsigned int marker);
-void wit_div_(stack_t **fore, unsigned int marker);
-void str_mul_(stack_t **fore, unsigned int marker);
-void mk_mod_(stack_t **fore, unsigned int marker);
-void st_pchar_(stack_t **fore, unsigned int marker);
-void aka_pstr_(stack_t **fore, unsigned int marker);
+void f_div(stack_t **head, unsigned int counter);
+void f_mul(stack_t **head, unsigned int counter);
+void f_mod(stack_t **head, unsigned int counter);
+void f_pchar(stack_t **head, unsigned int counter);
+void f_pstr(stack_t **head, unsigned int counter);
 void aka_rotl_(stack_t **fore, unsigned int marker);
 void ak_rotr_(stack_t **fore, __attribute__((unused)) unsigned int marker);
-void _ad_nod(stack_t **fore, int ok);
-void the_queue_(stack_t **fore, int edd);
-void aka_queue_(stack_t **fore, unsigned int marker);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
+void f_queue(stack_t **head, unsigned int counter);
 void st_stack_(stack_t **fore, unsigned int marker);
-
 #endif
 

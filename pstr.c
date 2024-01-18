@@ -2,26 +2,26 @@
 
 #include "monty.h"
 /**
- * aka_pstr_ - prints the string starting at the top of the stack,
+ * f_pstr - prints the string starting at the top of the stack,
  * followed by a new
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void aka_pstr_(stack_t **fore, unsigned int marker)
+void f_pstr(stack_t **head, unsigned int counter)
 {
-	stack_t *err;
-	(void)marker;
+	stack_t *h;
+	(void)counter;
 
-	err = *fore;
-	while (err)
+	h = *head;
+	while (h)
 	{
-		if (err->n > 127 || err->n <= 0)
+		if (h->n > 127 || h->n <= 0)
 		{
 			break;
 		}
-		printf("%c", err->n);
-		err = err->next;
+		printf("%c", h->n);
+		h = h->next;
 	}
 	printf("\n");
 }
