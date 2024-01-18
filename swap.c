@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
  * f_swap - adds the top two elements of the stack.
@@ -5,28 +7,28 @@
  * @counter: line_number
  * Return: no return
 */
-void f_swap(stack_t **head, unsigned int counter)
+void m_swap_(stack_t **fore, unsigned int marker)
 {
-	stack_t *h;
+	stack_t *ed;
 	int len = 0, aux;
 
-	h = *head;
-	while (h)
+	ed = *fore;
+	while (ed)
 	{
-		h = h->next;
+		ed = ed->next;
 		len++;
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", marker);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*head);
+		free_stack(*fore);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n;
-	h->n = h->next->n;
-	h->next->n = aux;
+	ed = *fore;
+	aux = ed->edd;
+	ed->edd = ed->next->edd;
+	ed->next->edd = aux;
 }
 

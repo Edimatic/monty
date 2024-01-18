@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
   *f_rotr- rotates the stack to the bottom
@@ -5,22 +7,22 @@
   *@counter: line_number
   *Return: no return
  */
-void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
+void ak_rotr_(stack_t **fore, __attribute__((unused)) unsigned int marker)
 {
-	stack_t *copy;
+	stack_t *duplicate;
 
-	copy = *head;
-	if (*head == NULL || (*head)->next == NULL)
+	duplicate = *fore;
+	if (*fore == NULL || (*fore)->next == NULL)
 	{
 		return;
 	}
-	while (copy->next)
+	while (duplicate->next)
 	{
-		copy = copy->next;
+		duplicate = duplicate->next;
 	}
-	copy->next = *head;
-	copy->prev->next = NULL;
-	copy->prev = NULL;
-	(*head)->prev = copy;
-	(*head) = copy;
+	duplicate->next = *fore;
+	duplicate->prev->next = NULL;
+	duplicate->prev = NULL;
+	(*fore)->prev = duplicate;
+	(*fore) = duplicate;
 }

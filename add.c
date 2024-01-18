@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
  * f_add - adds the top two elements of the stack.
@@ -25,8 +27,8 @@ void f_add(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
-	aux = h->n + h->next->n;
-	h->next->n = aux;
+	aux = h->edd + h->next->edd;
+	h->next->edd = aux;
 	*head = h->next;
 	free(h);
 }

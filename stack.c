@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
  * f_stack - prints the top
@@ -5,9 +7,9 @@
  * @counter: line_number
  * Return: no return
 */
-void f_stack(stack_t **head, unsigned int counter)
+void st_stack_(stack_t **fore, unsigned int marker)
 {
-	(void)head;
-	(void)counter;
+	(void)fore;
+	(void)marker;
 	bus.lifi = 0;
 }

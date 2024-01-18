@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
   *f_rotl- rotates the stack to the top
@@ -5,22 +7,22 @@
   *@counter: line_number
   *Return: no return
  */
-void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
+void aka_rotl_(stack_t **fore,  __attribute__((unused)) unsigned int marker)
 {
-	stack_t *tmp = *head, *aux;
+	stack_t *man = *fore, *fom;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*fore == NULL || (*fore)->next == NULL)
 	{
 		return;
 	}
-	aux = (*head)->next;
-	aux->prev = NULL;
-	while (tmp->next != NULL)
+	fom = (*fore)->next;
+	fom->prev = NULL;
+	while (man->next != NULL)
 	{
-		tmp = tmp->next;
+		man = man->next;
 	}
-	tmp->next = *head;
-	(*head)->next = NULL;
-	(*head)->prev = tmp;
-	(*head) = aux;
+	man->next = *fore;
+	(*fore)->next = NULL;
+	(*fore)->prev = man;
+	(*fore) = fom;
 }

@@ -1,25 +1,27 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
- * addnode - add node to the head stack
+ * _ad_nod - add node to the head stack
  * @head: head of the stack
  * @n: new_value
  * Return: no return
 */
-void addnode(stack_t **head, int n)
+void _ad_nod(stack_t **fore, int ok)
 {
 
-	stack_t *new_node, *aux;
+	stack_t *exe_nod, *max;
 
-	aux = *head;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	max = *fore;
+	exe_nod = malloc(sizeof(stack_t));
+	if (exe_nod == NULL)
 	{ printf("Error\n");
 		exit(0); }
-	if (aux)
-		aux->prev = new_node;
-	new_node->n = n;
-	new_node->next = *head;
-	new_node->prev = NULL;
-	*head = new_node;
+	if (max)
+		max->prev = exe_nod;
+	exe_nod->edd = ok;
+	exe_nod->next = *fore;
+	exe_nod->prev = NULL;
+	*fore = exe_nod;
 }
 

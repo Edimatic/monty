@@ -1,3 +1,5 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
  * f_queue - prints the top
@@ -5,10 +7,10 @@
  * @counter: line_number
  * Return: no return
 */
-void f_queue(stack_t **head, unsigned int counter)
+void aka_queue_(stack_t **fore, unsigned int marker)
 {
-	(void)head;
-	(void)counter;
+	(void)fore;
+	(void)marker;
 	bus.lifi = 1;
 }
 
@@ -18,18 +20,18 @@ void f_queue(stack_t **head, unsigned int counter)
  * @head: head of the stack
  * Return: no return
 */
-void addqueue(stack_t **head, int n)
+void the_queue_(stack_t **fore, int edd)
 {
-	stack_t *new_node, *aux;
+	stack_t *st_point, *aux;
 
-	aux = *head;
-	new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
+	aux = *fore;
+	st_point = malloc(sizeof(stack_t));
+	if (st_point == NULL)
 	{
 		printf("Error\n");
 	}
-	new_node->n = n;
-	new_node->next = NULL;
+	st_point->edd = edd;
+	st_point->next = NULL;
 	if (aux)
 	{
 		while (aux->next)
@@ -37,13 +39,13 @@ void addqueue(stack_t **head, int n)
 	}
 	if (!aux)
 	{
-		*head = new_node;
-		new_node->prev = NULL;
+		*fore = st_point;
+		st_point->prev = NULL;
 	}
 	else
 	{
-		aux->next = new_node;
-		new_node->prev = aux;
+		aux->next = st_point;
+		st_point->prev = aux;
 	}
 }
 

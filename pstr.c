@@ -1,25 +1,27 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
- * f_pstr - prints the string starting at the top of the stack,
+ * aka_pstr_ - prints the string starting at the top of the stack,
  * followed by a new
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void f_pstr(stack_t **head, unsigned int counter)
+void aka_pstr_(stack_t **fore, unsigned int marker)
 {
-	stack_t *h;
-	(void)counter;
+	stack_t *err;
+	(void)marker;
 
-	h = *head;
-	while (h)
+	err = *fore;
+	while (err)
 	{
-		if (h->n > 127 || h->n <= 0)
+		if (err->edd > 127 || err->edd <= 0)
 		{
 			break;
 		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", err->edd);
+		err = err->next;
 	}
 	printf("\n");
 }

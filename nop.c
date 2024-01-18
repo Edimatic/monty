@@ -1,12 +1,14 @@
+#define _POSIX_C_SOURCE 200809L
+
 #include "monty.h"
 /**
-  *f_nop- nothing
+  *kil_nop_ - nothing
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void f_nop(stack_t **head, unsigned int counter)
+void kil_nop_(stack_t **fore, unsigned int marker)
 {
-	(void) counter;
-	(void) head;
+	(void) marker;
+	(void) fore;
 }
