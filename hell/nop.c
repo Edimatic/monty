@@ -2,13 +2,13 @@
 
 #include "monty.h"
 /**
-  *kil_nop_ - nothing
+  *f_nop- nothing
   *@head: stack head
   *@counter: line_number
   *Return: no return
  */
-void kil_nop_(stack_t **fore, unsigned int marker)
+void f_nop(stack_t **head, unsigned int counter)
 {
-	(void) marker;
-	(void) fore;
+	(void) counter;
+	(void) head;
 }
