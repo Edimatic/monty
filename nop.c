@@ -1,16 +1,12 @@
-#define _POSIX_C_SOURCE 200809L
-
 #include "monty.h"
-
 /**
- * nop - doesn't do anything
- * @stack: double pointer to the head of the stack
- * @line_number: current line number in the file
+  *f_nop- nothing
+  *@head: stack head
+  *@counter: line_number
+  *Return: no return
  */
-void nop(stack_t **stack, unsigned int line_number)
+void f_nop(stack_t **head, unsigned int counter)
 {
-	(void)stack;
-	(void)line_number;
-/* No operation, do nothing */
+	(void) counter;
+	(void) head;
 }
-

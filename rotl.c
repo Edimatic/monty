@@ -1,31 +1,26 @@
-#define _POSIX_C_SOURCE 200809L
-
 #include "monty.h"
-
 /**
- * rotl - rotates the stack to the top
- * @stack: double pointer to the head of the stack
- * @line_number: current line number in the file
+  *f_rotl- rotates the stack to the top
+  *@head: stack head
+  *@counter: line_number
+  *Return: no return
  */
-void _rotl_(stack_t **stack, unsigned int line_nums)
+void f_rotl(stack_t **head,  __attribute__((unused)) unsigned int counter)
 {
-	stack_t *temp;
-	(void)line_nums;
+	stack_t *tmp = *head, *aux;
 
-	if (!stack || !*stack || !(*stack)->next)
-	return;
-
-	temp = *stack;
-
-	while (temp->next)
-	temp = temp->next;
-
-	temp->next = *stack;
-	(*stack)->prev = temp;
-
-	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
-
-	temp->next->next = NULL;
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		return;
+	}
+	aux = (*head)->next;
+	aux->prev = NULL;
+	while (tmp->next != NULL)
+	{
+		tmp = tmp->next;
+	}
+	tmp->next = *head;
+	(*head)->next = NULL;
+	(*head)->prev = tmp;
+	(*head) = aux;
 }
-

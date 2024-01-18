@@ -1,27 +1,32 @@
-#define _POSIX_C_SOURCE 200809L
-
 #include "monty.h"
-
 /**
-* swap - swaps the top two elements of the stack
-* @stack: double pointer to the head of the stack
-* @line_number: current line number in the file
+ * f_swap - adds the top two elements of the stack.
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
 */
-void swap(stack_t **stack, unsigned int line_number)
+void f_swap(stack_t **head, unsigned int counter)
 {
-	int temp_value;
-	stack_t *temp;
+	stack_t *h;
+	int len = 0, aux;
 
-	if (!stack || !*stack || !((*stack)->next))
+	h = *head;
+	while (h)
 	{
-	fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
-	exit(EXIT_FAILURE);
+		h = h->next;
+		len++;
 	}
-
-	temp = *stack;
-
-	temp_value = temp->n;
-	temp->n = temp->next->n;
-	temp->next->n = temp_value;
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
+	}
+	h = *head;
+	aux = h->n;
+	h->n = h->next->n;
+	h->next->n = aux;
 }
 

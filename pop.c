@@ -1,34 +1,23 @@
-#define _POSIX_C_SOURCE 200809L
-
 #include "monty.h"
-
 /**
- * pop - removes the top element of the stack
- * @stack: double pointer to the head of the stack
- * @line_number: current line number in the file
- */
-void pop(stack_t **stack, unsigned int line_number)
+ * f_pop - prints the top
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void f_pop(stack_t **head, unsigned int counter)
 {
-	stack_t *temp;
-	
-	if (!stack || !*stack)
-	{
-	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
-	exit(EXIT_FAILURE);
-	}
+	stack_t *h;
 
-	temp = *stack;
-
-	if (temp->next)
+	if (*head == NULL)
 	{
-	*stack = temp->next;
-	(*stack)->prev = NULL;
+		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
+		exit(EXIT_FAILURE);
 	}
-	else
-	{
-	*stack = NULL;
-	}
-
-	free(temp);
+	h = *head;
+	*head = h->next;
+	free(h);
 }
-

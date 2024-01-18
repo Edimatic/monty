@@ -1,33 +1,25 @@
-#define _POSIX_C_SOURCE 200809L
-
 #include "monty.h"
-
 /**
- * pstr - prints the string starting at the top of the stack
- * @stack: double pointer to the head of the stack
- * @line_number: current line number in the file
- */
-void _pstr_(stack_t **stack, unsigned int line_nums)
+ * f_pstr - prints the string starting at the top of the stack,
+ * followed by a new
+ * @head: stack head
+ * @counter: line_number
+ * Return: no return
+*/
+void f_pstr(stack_t **head, unsigned int counter)
 {
+	stack_t *h;
+	(void)counter;
 
-	stack_t *temp;
-	(void)line_nums;
-
-
-	if (!stack || !*stack)
+	h = *head;
+	while (h)
 	{
-	putchar('\n');
-	return;
+		if (h->n > 127 || h->n <= 0)
+		{
+			break;
+		}
+		printf("%c", h->n);
+		h = h->next;
 	}
-
-	temp = *stack;
-
-	while (temp && temp->n != 0 && (temp->n >= 0 && temp->n <= 127))
-	{
-	putchar(temp->n);
-	temp = temp->next;
-	}
-
-	putchar('\n');
+	printf("\n");
 }
-
