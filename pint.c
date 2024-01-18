@@ -2,21 +2,21 @@
 
 #include "monty.h"
 /**
- * aka_pint_ - prints the top
+ * f_pint - prints the top
  * @head: stack head
  * @counter: line_number
  * Return: no return
 */
-void aka_pint_(stack_t **fore, unsigned int marker)
+void f_pint(stack_t **head, unsigned int counter)
 {
-	if (*fore == NULL)
+	if (*head == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", marker);
+		fprintf(stderr, "L%u: can't pint, stack empty\n", counter);
 		fclose(bus.file);
 		free(bus.content);
-		free_stack(*fore);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d\n", (*fore)->edd);
+	printf("%d\n", (*head)->n);
 }
 

@@ -27,8 +27,8 @@ void f_add(stack_t **head, unsigned int counter)
 		exit(EXIT_FAILURE);
 	}
 	h = *head;
-	aux = h->edd + h->next->edd;
-	h->next->edd = aux;
+	aux = h->n + h->next->n;
+	h->next->n = aux;
 	*head = h->next;
 	free(h);
 }

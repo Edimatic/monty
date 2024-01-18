@@ -2,23 +2,23 @@
 
 #include "monty.h"
 /**
- * lp_pall_ - prints the stack
+ * f_pall - prints the stack
  * @head: stack head
  * @counter: no used
  * Return: no return
 */
-void lp_pall_(stack_t **fore, unsigned int marker)
+void f_pall(stack_t **head, unsigned int counter)
 {
-	stack_t *hol;
-	(void)marker;
+	stack_t *h;
+	(void)counter;
 
-	hol = *fore;
-	if (hol == NULL)
+	h = *head;
+	if (h == NULL)
 		return;
-	while (hol)
+	while (h)
 	{
-		printf("%d\n", hol->edd);
-		hol = hol->next;
+		printf("%d\n", h->n);
+		h = h->next;
 	}
 }
 

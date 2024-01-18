@@ -7,10 +7,10 @@
  * @counter: line_number
  * Return: no return
 */
-void aka_queue_(stack_t **fore, unsigned int marker)
+void f_queue(stack_t **head, unsigned int counter)
 {
-	(void)fore;
-	(void)marker;
+	(void)head;
+	(void)counter;
 	bus.lifi = 1;
 }
 
@@ -20,18 +20,18 @@ void aka_queue_(stack_t **fore, unsigned int marker)
  * @head: head of the stack
  * Return: no return
 */
-void the_queue_(stack_t **fore, int edd)
+void addqueue(stack_t **head, int n)
 {
-	stack_t *st_point, *aux;
+	stack_t *new_node, *aux;
 
-	aux = *fore;
-	st_point = malloc(sizeof(stack_t));
-	if (st_point == NULL)
+	aux = *head;
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
 	{
 		printf("Error\n");
 	}
-	st_point->edd = edd;
-	st_point->next = NULL;
+	new_node->n = n;
+	new_node->next = NULL;
 	if (aux)
 	{
 		while (aux->next)
@@ -39,13 +39,13 @@ void the_queue_(stack_t **fore, int edd)
 	}
 	if (!aux)
 	{
-		*fore = st_point;
-		st_point->prev = NULL;
+		*head = new_node;
+		new_node->prev = NULL;
 	}
 	else
 	{
-		aux->next = st_point;
-		st_point->prev = aux;
+		aux->next = new_node;
+		new_node->prev = aux;
 	}
 }
 

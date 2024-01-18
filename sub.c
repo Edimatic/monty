@@ -24,8 +24,8 @@ void s_sub_(stack_t **fore, unsigned int marker)
 		exit(EXIT_FAILURE);
 	}
 	aux = *fore;
-	sus = aux->next->edd - aux->edd;
-	aux->next->edd = sus;
+	sus = aux->next->n - aux->n;
+	aux->next->n = sus;
 	*fore = aux->next;
 	free(aux);
 }
