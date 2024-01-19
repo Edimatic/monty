@@ -1,16 +1,11 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_swap - adds the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
- * Return: no return
-*/
-void m_swap_(stack_t **fore, unsigned int marker)
-{
+
+void m_swap_(stack_t **fore, unsigned int marker) {
+
 	stack_t *edd;
-	int len = 0, aux;
+	int len = 0, max;
 
 	edd = *fore;
 	while (edd)
@@ -27,8 +22,8 @@ void m_swap_(stack_t **fore, unsigned int marker)
 		exit(EXIT_FAILURE);
 	}
 	edd = *fore;
-	aux = edd->n;
+	max = edd->n;
 	edd->n = edd->next->n;
-	edd->next->n = aux;
+	edd->next->n = max;
 }
 

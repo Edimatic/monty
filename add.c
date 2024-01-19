@@ -1,21 +1,16 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_add - adds the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
- * Return: no return
-*/
-void f_add(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
+
+void f_add(stack_t **head, unsigned int counter){
+
+	stack_t *hol;
 	int len = 0, aux;
 
-	h = *head;
-	while (h)
+	hol = *head;
+	while (hol)
 	{
-		h = h->next;
+		hol = hol->next;
 		len++;
 	}
 	if (len < 2)
@@ -26,10 +21,10 @@ void f_add(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->n + h->next->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	hol = *head;
+	aux = hol->n + hol->next->n;
+	hol->next->n = aux;
+	*head = hol->next;
+	free(hol);
 }
 

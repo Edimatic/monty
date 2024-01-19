@@ -1,15 +1,10 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_pop - prints the top
- * @head: stack head
- * @counter: line_number
- * Return: no return
-*/
-void f_pop(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
+
+void f_pop(stack_t **head, unsigned int counter){
+
+	stack_t *hol;
 
 	if (*head == NULL)
 	{
@@ -19,7 +14,6 @@ void f_pop(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	*head = h->next;
-	free(h);
-}
+	hol = *head;
+	*head = hol->next;
+	free(hol);}

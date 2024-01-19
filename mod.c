@@ -1,22 +1,16 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_mod - computes the rest of the division of the second
- * top element of the stack by the top element of the stack
- * @head: stack head
- * @counter: line_number
- * Return: no return
-*/
-void f_mod(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
-	int len = 0, aux;
 
-	h = *head;
-	while (h)
+void f_mod(stack_t **head, unsigned int counter){
+
+	stack_t *hol;
+	int len = 0, max;
+
+	hol = *head;
+	while (hol)
 	{
-		h = h->next;
+		hol = hol->next;
 		len++;
 	}
 	if (len < 2)
@@ -27,8 +21,8 @@ void f_mod(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	if (h->n == 0)
+	hol = *head;
+	if (hol->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", counter);
 		fclose(bus.file);
@@ -36,9 +30,8 @@ void f_mod(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	aux = h->next->n % h->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
-}
+	max = hol->next->n % hol->n;
+	hol->next->n = max;
+	*head = hol->next;
+	free(hol);}
 

@@ -1,16 +1,9 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
-* execute - executes the opcode
-* @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
-* @content: line content
-* Return: no return
-*/
-int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file)
-{
+
+int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file){
+
 	instruction_t opst[] = {
 				{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 				{"pop", f_pop},

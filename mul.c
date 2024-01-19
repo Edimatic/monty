@@ -1,21 +1,16 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_mul - multiplies the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
- * Return: no return
-*/
-void f_mul(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
-	int len = 0, aux;
 
-	h = *head;
-	while (h)
+void f_mul(stack_t **head, unsigned int counter){
+
+	stack_t *hol;
+	int len = 0, max;
+
+	hol = *head;
+	while (hol)
 	{
-		h = h->next;
+		hol = hol->next;
 		len++;
 	}
 	if (len < 2)
@@ -26,9 +21,9 @@ void f_mul(stack_t **head, unsigned int counter)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	h = *head;
-	aux = h->next->n * h->n;
-	h->next->n = aux;
-	*head = h->next;
-	free(h);
+	hol = *head;
+	max = hol->next->n * hol->n;
+	hol->next->n = max;
+	*head = hol->next;
+	free(hol);
 }

@@ -1,24 +1,19 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
- * f_pall - prints the stack
- * @head: stack head
- * @counter: no used
- * Return: no return
-*/
-void f_pall(stack_t **head, unsigned int counter)
-{
-	stack_t *h;
+
+void f_pall(stack_t **head, unsigned int counter){
+
+	stack_t *hol;
 	(void)counter;
 
-	h = *head;
-	if (h == NULL)
+	hol = *head;
+	if (hol == NULL)
 		return;
-	while (h)
+	while (hol)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
+		printf("%d\n", hol->n);
+		hol = hol->next;
 	}
 }
 

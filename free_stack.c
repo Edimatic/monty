@@ -1,19 +1,15 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-/**
-* free_stack - frees a doubly linked list
-* @head: head of the stack
-*/
-void free_stack(stack_t *head)
-{
-	stack_t *aux;
 
-	aux = head;
+void free_stack(stack_t *head){
+
+	stack_t *max;
+
+	max = head;
 	while (head)
 	{
-		aux = head->next;
+		max = head->next;
 		free(head);
-		head = aux;
-	}
+		head = max;}
 }
