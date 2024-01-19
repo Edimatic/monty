@@ -25,22 +25,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
-/**
- * struct bus_s - variables -args, file, line content
- * @arg: value
- * @file: pointer to monty file
- * @content: line content
- * @lifi: flag change stack <-> queue
- * Description: carries values through the program
- */
-typedef struct bus_s
-{
-	char *arg;
-	FILE *file;
-	char *content;
-	int lifi;
-}  bus_t;
-extern bus_t bus;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -55,6 +40,22 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct bus_s - variables -args, file, line content
+ * @arg: value
+ * @file: pointer to monty file
+ * @content: line content
+ * @lifi: flag change stack <-> queue
+ * Description: carries values through the program
+ */
+typedef struct bus_s
+{
+        char *arg;
+        FILE *file;
+        char *content;
+        int lifi;
+}  bus_t;
+extern bus_t bus;
 
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
@@ -80,5 +81,29 @@ void addnode(stack_t **head, int n);
 void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void st_stack_(stack_t **fore, unsigned int marker);
-#endif
+
+void aka_push_(stack_t **fore, unsigned int marker);
+void lp_pall_(stack_t **fore, unsigned int marker);
+void aka_pint_(stack_t **fore, unsigned int marker);
+int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file);
+
+
+void aka_pop_(stack_t **fore, unsigned int marker);
+void m_swap_(stack_t **fore, unsigned int marker);
+void f_add(stack_t **head, unsigned int counter);
+void kil_nop_(stack_t **fore, unsigned int marker);
+void s_sub_(stack_t **fore, unsigned int marker);
+void wit_div_(stack_t **fore, unsigned int marker);
+void str_mul_(stack_t **fore, unsigned int marker);
+void mk_mod_(stack_t **fore, unsigned int marker);
+void st_pchar_(stack_t **fore, unsigned int marker);
+void aka_pstr_(stack_t **fore, unsigned int marker);
+void aka_rotl_(stack_t **fore, unsigned int marker);
+void ak_rotr_(stack_t **fore, __attribute__((unused)) unsigned int marker);
+void _ad_nod(stack_t **fore, int ok);
+void the_queue_(stack_t **fore, int edd);
+void aka_queue_(stack_t **fore, unsigned int marker);
+void st_stack_(stack_t **fore, unsigned int marker);
+
+#endif	/*functions end*/
 
