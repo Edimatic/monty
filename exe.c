@@ -41,7 +41,7 @@ int x_exe(char *content, stack_t **fore, unsigned int marker, FILE *file){
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", marker, man);
 		fclose(file);
 		free(content);
-		free_stack(*fore);
+		/*free_stack(*fore);*/
 		exit(EXIT_FAILURE); }
-	return (1);
+	return 1;
 }
