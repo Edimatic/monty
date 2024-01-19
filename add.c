@@ -25,6 +25,5 @@ void f_add(stack_t **head, unsigned int counter){
 	aux = hol->n + hol->next->n;
 	hol->next->n = aux;
 	*head = hol->next;
-	/*free(hol);*/
-}
+	free(hol);	}
 

@@ -25,5 +25,4 @@ void f_mul(stack_t **head, unsigned int counter){
 	max = hol->next->n * hol->n;
 	hol->next->n = max;
 	*head = hol->next;
-	/*free(hol);*/
-}
+	free(hol);	}
