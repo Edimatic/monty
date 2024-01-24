@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void aka_rotl_(stack_t **fore,  __attribute__((unused)) unsigned int marker) {
+/**
+* aka_rotl_ - rotates the first element of the stack
+* @fore: stack head
+* @marker: line count to be counted
+*
+* Return: void after program execution
+*/
+
+void aka_rotl_(stack_t **fore,  __attribute__((unused)) unsigned int marker)
+{
 
 	stack_t *man = *fore, *fom;
 

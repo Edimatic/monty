@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_mul(stack_t **head, unsigned int counter){
+/**
+ * f_mul - multiplies the top two elements of the stack.
+ * @head: stack head selector
+ * @counter: line_number to be counted
+ *
+ * Return: return nothing after program execution
+*/
+
+void f_mul(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	int len = 0, max;
@@ -25,4 +34,5 @@ void f_mul(stack_t **head, unsigned int counter){
 	max = hol->next->n * hol->n;
 	hol->next->n = max;
 	*head = hol->next;
-	free(hol);	}
+	free(hol);	
+}

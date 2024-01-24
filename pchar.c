@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_pchar(stack_t **head, unsigned int counter){
+/**
+ * f_pchar - prints the int at the top of the stack as char
+ * @head: stack given by main
+ * @counter: amount of lines to be counted
+ *
+ * Return: return nothing after program execution
+ */
+
+void f_pchar(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 

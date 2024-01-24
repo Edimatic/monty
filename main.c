@@ -3,7 +3,16 @@
 #include "monty.h"
 bus_t bus = {NULL, NULL, NULL, 0};
 
-int main(int argc, char *argv[]){
+/**
+* main - monty code interpreter
+* @argc: number of arguments count
+* @argv: monty file location
+*
+* Return: 0 on success after execution
+*/
+
+int main(int argc, char *argv[])
+{
 
 	char *content;
 	FILE *file;
@@ -38,5 +47,6 @@ int main(int argc, char *argv[]){
 	}
 	free_stack(fore);
 	fclose(file);
-return 0;}
+return (0);
+}
 

@@ -1,8 +1,16 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
+/**
+ * f_div_ - divides the top two elements of the stack.
+ * @head: stack head
+ * @counter: line_number
+ *
+ * Return: no return
+*/
 
-void f_div(stack_t **head, unsigned int counter){
+void f_div(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	int len = 0, max;

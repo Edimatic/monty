@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void s_sub_(stack_t **fore, unsigned int marker) {
+/**
+ * s_sub_ -  substracts the first two nodes of the stack
+ * @fore: stack given by main
+ * @marker: line counter to be marked
+ *
+ * Return: void after program execution
+ */
+
+void s_sub_(stack_t **fore, unsigned int marker)
+{
 
 	stack_t *max;
 	int sus, nodes;

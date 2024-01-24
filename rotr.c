@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void ak_rotr_(stack_t **fore, __attribute__((unused)) unsigned int marker){
+/**
+* ak_rotr_ - rotates the last node of a stack_t stack
+* @fore: stack head
+* @marker: line count
+*
+* Return: void after program execution
+*/
+
+void ak_rotr_(stack_t **fore, __attribute__((unused)) unsigned int marker)
+{
 
 	stack_t *duplicate;
 

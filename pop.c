@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_pop(stack_t **head, unsigned int counter){
+/**
+* f_pop - pops the very top element of the stack
+* @head: stack given by main in start.c
+* @counter: line number for error messages
+*
+* Return: void after execution
+*/
+
+void f_pop(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 
@@ -16,4 +25,5 @@ void f_pop(stack_t **head, unsigned int counter){
 	}
 	hol = *head;
 	*head = hol->next;
-	free(hol);}
+	free(hol);
+}

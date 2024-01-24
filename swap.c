@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void m_swap_(stack_t **fore, unsigned int marker) {
+/**
+ * m_swap_ -  swaps data from top to previous
+ * @fore: stack given by main
+ * @marker: amount of lines to mark
+ *
+ * Return: void after program execution
+ */
+
+void m_swap_(stack_t **fore, unsigned int marker)
+{
 
 	stack_t *edd;
 	int len = 0, max;

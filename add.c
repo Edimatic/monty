@@ -2,7 +2,17 @@
 
 #include "monty.h"
 
-void f_add(stack_t **head, unsigned int counter){
+
+/**
+ * f_add -  adds the first two nodes of the stack
+ * @head: stack given by main
+ * @counter: line counter
+ *
+ * Return: void
+ */
+
+void f_add(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	int len = 0, aux;
@@ -25,5 +35,6 @@ void f_add(stack_t **head, unsigned int counter){
 	aux = hol->n + hol->next->n;
 	hol->next->n = aux;
 	*head = hol->next;
-	free(hol);	}
+	free(hol);	
+}
 

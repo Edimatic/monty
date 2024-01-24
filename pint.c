@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_pint(stack_t **head, unsigned int counter){
+/**
+ * f_pint - print the value at the top of the stack
+ * @head: stack given by main in start.c
+ * @counter: amount of lines to be counted
+ *
+ * Return: void
+ */
+
+void f_pint(stack_t **head, unsigned int counter)
+{
 
 	if (*head == NULL)
 	{

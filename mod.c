@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_mod(stack_t **head, unsigned int counter){
+/**
+ * f_mod - computes the rest of the division of the second
+  top element of the stack by the top element of the stack
+ * @head: stack head giving
+ * @counter: line_number to be counted
+ * Return: return nothing after execution
+*/
+
+void f_mod(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	int len = 0, max;
@@ -33,5 +42,5 @@ void f_mod(stack_t **head, unsigned int counter){
 	max = hol->next->n % hol->n;
 	hol->next->n = max;
 	*head = hol->next;
-	free(hol);}
-
+	free(hol);
+}

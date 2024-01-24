@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_pall(stack_t **head, unsigned int counter){
+/**
+ * f_pall - prints the stack
+ * @head: stack given by main in start.c
+ * @counter: amount of lines to be counted
+ *
+ * Return: void
+ */
+
+void f_pall(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	(void)counter;

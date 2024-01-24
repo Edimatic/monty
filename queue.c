@@ -1,16 +1,33 @@
 #define _POSIX_C_SOURCE 200809L
 
 #include "monty.h"
-void f_queue(stack_t **head, unsigned int counter)	{
+
+/**
+ * f_queue - prints the top queue
+ * @head: stack head
+ * @counter: line_number to be counted
+ *
+ * Return: 0 after program execution
+*/
+
+void f_queue(stack_t **head, unsigned int counter)
+{
 
 	(void)head;
 	(void)counter;
 	bus.lifi = 1;
 }
 
+/**
+ * addqueue - add node to the tail stack of the given items
+ * @n: new_value 
+ * @head: head of the stack
+ *
+ * Return: 0 after program execution
+*/
 
-void addqueue(stack_t **head, int n)	{
-	
+void addqueue(stack_t **head, int n)
+{
 	stack_t *new_node, *max;
 
 	max = *head;
@@ -37,4 +54,3 @@ void addqueue(stack_t **head, int n)	{
 		new_node->prev = max;
 	}
 }
-

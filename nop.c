@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_nop(stack_t **head, unsigned int counter){
+/**
+ *f_nop- main function
+ *@head: stack head
+ *@counter: line_number to be counted
+ *
+ *Return: return nothing after program execution
+ */
+
+void f_nop(stack_t **head, unsigned int counter)
+{
 
 	(void) counter;
 	(void) head;

@@ -2,7 +2,16 @@
 
 #include "monty.h"
 
-void f_pstr(stack_t **head, unsigned int counter) {
+/**
+ * f_pstr - prints the contents of a stack_t stack as a string
+ * @head: stack given by main
+ * @counter: line counter for error messages
+ *
+ * Return: 0 after program execution
+ */
+
+void f_pstr(stack_t **head, unsigned int counter)
+{
 
 	stack_t *hol;
 	(void)counter;
@@ -17,4 +26,5 @@ void f_pstr(stack_t **head, unsigned int counter) {
 		printf("%c", hol->n);
 		hol = hol->next;
 	}
-	printf("\n");	}
+	printf("\n");	
+}
